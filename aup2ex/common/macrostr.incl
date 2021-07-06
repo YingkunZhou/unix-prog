@@ -217,7 +217,7 @@
 {"fcntl_io", (intptr_t)O_RDONLY, "O_RDONLY", ""},
 {"fcntl_io", (intptr_t)O_RDWR, "O_RDWR", ""},
 {"fcntl_io", (intptr_t)O_WRONLY, "O_WRONLY", ""},
-#ifndef BSD_DERIVED
+#ifdef BSD_DERIVED
 {"rusage", (intptr_t)RUSAGE_SELF, "RUSAGE_SELF", ""},
 {"rusage", (intptr_t)RUSAGE_CHILDREN, "RUSAGE_CHILDREN", ""},
 {"rlimit", (intptr_t)RLIMIT_CORE, "RLIMIT_CORE", ""},

@@ -33,9 +33,6 @@
 #define MASTER_NAME_SEARCH
 #endif
 /*[incl]*/
-#ifdef _XOPEN_UNIX
-#include <stropts.h> /* for STREAMS */
-#endif
 #ifdef NEED_TIOCSCTTY
 #include <sys/ttycom.h> /* for TIOCSCTTY */
 #endif

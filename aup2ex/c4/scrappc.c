@@ -22,13 +22,7 @@
 	<stdbool.h> and <curses.h> define bool incompatibly, so the following
 	kludge separates the two.
 */
-#ifndef FREEBSD
-#define bool bool_aup
-#endif
 #include "defs.h"
-#ifndef FREEBSD
-#undef bool
-#endif
 
 /*[scrappc]*/
 #include <curses.h>

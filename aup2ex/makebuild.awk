@@ -94,7 +94,7 @@ NR == 1 {
 	}
 	if (NF > 1) {
 		printf objlist " $(AUPOBJS) " pthreadstub "\n"
-		printf "\t$(CCLINK) -o " $1 objlist " $(AUPOBJS) " libraries " " pthreadstub "\n"
+		printf "\t$(CCLINK) -o build/" $1 objlist " $(AUPOBJS) " libraries " " pthreadstub "\n"
 	}
 }
 
@@ -113,6 +113,6 @@ END {
 			pgmlist = pgmlist " " pgm
 		printf "\nall: " pgmlist
 		printf "\nclean:\n"
-		printf "\trm " pgmlist " *.o\n"
+		printf "\trm build -rf\n"
 	}
 }

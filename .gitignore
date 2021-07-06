@@ -52,3 +52,5 @@ Mkfile.old
 dkms.conf
 
 aup2ex/c*/Makefile
+build/
+.stamps/

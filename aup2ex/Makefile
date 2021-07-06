@@ -2,20 +2,23 @@
 
 subdir = c1 c2 c3 c4 c5 c6 c7 c8 c9 # common
 
-RESULT = $(addprefix stamps/, $(subdir))
-LIBS := -lncurses -lutil -lpthread -lrt
+RESULT = $(addprefix .stamps/, $(subdir))
 
 all: $(RESULT)
 
-$(RESULT): stamps/% : %
+$(RESULT): .stamps/% : %
+	mkdir -p $</build
 	$(MAKE) -C $< AUPSRC=$(PWD) \
 		OS=LINUX \
-		LIBS=$(LIBS) \
+		LIBS=-lncurses \
+		LIBS+=-lutil \
+		LIBS+=-lrt \
+		LIBS+=-lpthread \
 		TLIBS=-pthread
 	mkdir -p $(dir $@) && touch $@
 
 clean:
-	rm -rf stamps
+	rm -rf .stamps
 	for d in $(subdir) ; do \
 		$(MAKE) -C $$d clean ; \
 	done
