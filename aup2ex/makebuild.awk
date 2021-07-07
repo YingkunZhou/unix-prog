@@ -113,6 +113,6 @@ END {
 			pgmlist = pgmlist " " pgm
 		printf "\nall: " pgmlist
 		printf "\nclean:\n"
-		printf "\trm build -rf\n"
+		printf "\trm build *.o -rf\n"
 	}
 }

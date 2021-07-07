@@ -8,7 +8,7 @@ all: $(RESULT)
 
 $(RESULT): .stamps/% : %
 	mkdir -p $</build
-	$(MAKE) -C $< AUPSRC=$(PWD) \
+	$(MAKE) -C $< \
 		OS=LINUX \
 		LIBS=-lncurses \
 		LIBS+=-lutil \
